@@ -1,0 +1,23 @@
+footer {
+  height: 250px;
+  border-top: 1px solid $silver;
+  padding: 3rem 1.5rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer__column {
+  .footer__column__headline, a {
+    line-height: 20px;
+  }
+  .footer__column__headline {
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  & > span {
+    opacity: 0.7;
+    margin-bottom: 10px;
+  }
+}
+

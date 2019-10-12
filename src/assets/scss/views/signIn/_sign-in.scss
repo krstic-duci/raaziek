@@ -1,0 +1,58 @@
+.sign__in__box {
+  height: inherit;
+  .sign__in__box--centered {
+    height: calc(100% - 299px);
+    display: flex;
+    align-items: center;
+  }
+}
+
+.sign__in__wrapper {
+  flex-flow: column wrap;
+  form {
+    max-width: 370px;
+  }
+  h3 {
+    margin-bottom: 16px;
+  }
+}
+
+.recaptcha__box {
+  margin-bottom: 14px;
+  span {
+    color: rgba($black, 0.5);
+    font-size: 12px;
+    line-height: 17px;
+    a {
+      color: $navy-blue !important;
+      font-size: inherit;
+    }
+  }
+}
+
+.button__wrapper {
+  align-items: center;
+  margin-top: 24px;
+  span {
+    line-height: 18px;
+    color: rgba($black, 0.5);
+    margin: 0 16px;
+  }
+  .bg-navy-blue, .bg-silver {
+    transition: all 0.3s ease-in-out;
+    border: 1px solid transparent;
+  }
+  .bg-navy-blue {
+    &:hover {
+      color: $navy-blue !important;
+      background-color: $white;
+      border: 1px solid $navy-blue;
+    }
+  }
+  .bg-silver {
+    &:hover {
+      color: $grey;
+      background-color: $navy-blue;
+    }
+  }
+}

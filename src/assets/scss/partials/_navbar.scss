@@ -1,0 +1,17 @@
+header {
+  box-shadow: inset 0px -1px 0px $dirty-white;
+  border-bottom: 1px solid $silver;
+  height: 49px;
+
+  nav {
+    height: inherit;
+    justify-content: center;
+    align-items: center;
+
+    .navbar__headline {
+      font-size: 18px;
+      line-height: 23px;
+      font-weight: 700;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#app {
+  height: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+p, button, input, a, label {
+  font-size: 14px;
+}
+
+button {
+  border: 0;
+  outline: none;
+}
+
+h3 {
+  font-size: 24px !important;
+  line-height: 31px;
+}

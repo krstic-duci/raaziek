@@ -1,0 +1,17 @@
+@media screen and (max-width: 768px) {
+  .sign__in__box {
+    height: auto;
+  }
+  .sign__in__wrapper {
+    form {
+      max-width: unset;
+      width: 100%;
+    }
+  }
+  footer {
+    height: auto;
+    a {
+      max-width: 150px;
+    }
+  }
+}
