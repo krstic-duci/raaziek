@@ -14,8 +14,30 @@
   footer {
     height: auto;
     position: relative;
+    padding: 1rem 1.5rem;
     a {
       max-width: 150px;
     }
+  }
+}
+
+@media screen and (max-height: 500px) and (max-width: 900px) and (orientation: landscape) {
+  .sign__in__box {
+    height: auto;
+    .sign__in__box--centered {
+      height: inherit;
+    }
+  }
+  footer {
+    height: auto;
+    position: relative;
+  }
+}
+
+
+
+@media screen and (max-width: 480px) {
+  .generic-btn {
+    padding: 14px;
   }
 }
