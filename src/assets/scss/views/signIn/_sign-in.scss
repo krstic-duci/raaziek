@@ -51,7 +51,7 @@
   }
   .bg-silver {
     &:hover {
-      color: $grey;
+      color: $grey !important;
       background-color: $navy-blue;
     }
   }

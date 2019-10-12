@@ -7,8 +7,15 @@
       <div class="container">
         <div class="columns is-centered is-vcentered sign__in__wrapper">
           <div class="column">
+
             <h3>Create an account</h3>
-            <form @submit.prevent="onSignIn">
+
+            <ValidationObserver
+              v-slot="{ invalid }"
+              @submit.prevent="onSignIn"
+              ref="signInObserver"
+              tag="form"
+            >
               <!-- USER NAME -->
               <ValidationProvider
                 rules="required|min:6|max:100|alpha"
@@ -38,7 +45,7 @@
                     {{ error }}
                   </li>
                 </ul>
-              </ValidationProvider>
+              </ValidationProvider >
 
               <!-- EMAIL -->
               <ValidationProvider
@@ -119,18 +126,21 @@
 
               <!-- Checkbox -->
               <ValidationProvider
-                rules="required"
+                :rules="{ required: { allowFalse: false } }"
                 v-slot="{ errors }"
                 tag="div"
                 name="checkbox"
               >
                 <input
-                  v-model="signInChecked"
                   type="checkbox"
                   id="sign-in-checked"
                   class="form__box__input--checbox"
+                  v-model="signInChecked"
                 >
-                <label class="form__box__label--checkbox is-relative" for="sign-in-checked">
+                <label
+                  class="form__box__label--checkbox is-relative"
+                  for="sign-in-checked"
+                >
                   I agree to the company terms
                 </label>
                 <ul class="form__box__errors">
@@ -147,10 +157,13 @@
                   or
                 </span>
                 <!-- Log In -->
-                <button class="bg-silver txt-navy-blue generic-btn">Log In</button>
+                <router-link to='/' class="bg-silver txt-navy-blue generic-btn">
+                  Log In
+                </router-link>
               </div>
 
-            </form>
+            </ValidationObserver>
+
           </div>
         </div>
       </div>
@@ -164,48 +177,72 @@
 <script>
 import TheHeader from '@/components/TheHeader.vue'
 import TheFooter from '@/components/TheFooter.vue'
+import { ValidationObserver } from 'vee-validate'
 
 export default {
   name: 'home',
   components: {
     'the-header': TheHeader,
-    'the-footer': TheFooter
+    'the-footer': TheFooter,
+    ValidationObserver
   },
   data () {
     return {
+      // User name
       signInName: '',
-      signInEmail: '',
-      signInPassword: '',
-      signInChecked: false,
       labelName: false,
+      // User email
+      signInEmail: '',
       labelEmail: false,
-      labelPass: false
+      // User Password
+      signInPassword: '',
+      labelPass: false,
+      // User consent
+      signInChecked: false
     }
   },
   methods: {
-    onSignIn () {
-      alert('submited')
+    async onSignIn () {
+      const isValid = await this.$refs.signInObserver.validate()
+      if (isValid) {
+        // data is valid - post your form data
+        alert('yeah, form is submitted')
+      } else {
+        alert('Noooo')
+      }
     },
     // Input name field
     onInputNameFocus () {
       this.labelName = true
     },
     onInputNameBlur () {
-      this.labelName = false
+      if (!this.signInName.length) {
+        this.labelName = false
+      } else {
+        this.labelName = true
+      }
     },
     // Input email field
     onInputEmailFocus () {
       this.labelEmail = true
     },
     onInputEmailBlur () {
-      this.labelEmail = false
+      if (!this.signInEmail.length) {
+        this.labelEmail = false
+      } else {
+        this.labelEmail = true
+      }
     },
     // Input password field
     onInputPassFocus () {
       this.labelPass = true
     },
     onInputPassBlur () {
-      this.labelPass = false
+      if (!this.signInPassword.length) {
+        this.labelPass = false
+      } else {
+        this.labelPass = true
+      }
     }
   }
 }
