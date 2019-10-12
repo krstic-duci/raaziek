@@ -1,6 +1,9 @@
 @media screen and (max-width: 768px) {
   .sign__in__box {
     height: auto;
+    .sign__in__box--centered {
+      height: inherit;
+    }
   }
   .sign__in__wrapper {
     form {
@@ -10,6 +13,7 @@
   }
   footer {
     height: auto;
+    position: relative;
     a {
       max-width: 150px;
     }
