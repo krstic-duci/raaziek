@@ -3,9 +3,9 @@
 
     <the-header></the-header>
 
-    <div class="section sign__in__box--centered">
+    <div class="sign__in__box--centered">
       <div class="container">
-        <div class="columns is-centered is-vcentered sign__in__wrapper">
+        <div class="columns is-vcentered sign__in__wrapper">
           <div class="column">
 
             <h3>Create an account</h3>
@@ -23,6 +23,7 @@
                 tag="div"
                 name="username"
                 class="form__box is-relative"
+                mode="passive"
               >
                 <label
                   class="form__box__label"
@@ -40,11 +41,9 @@
                   @focus="onInputNameFocus"
                   @blur="onInputNameBlur"
                 >
-                <ul class="form__box__errors">
-                  <li v-for="(error, i) in errors" :key="i" class="has-text-danger">
-                    {{ error }}
-                  </li>
-                </ul>
+                <span class="form__box__errors has-text-danger">
+                  {{ errors[0] }}
+                </span>
               </ValidationProvider >
 
               <!-- EMAIL -->
@@ -54,6 +53,7 @@
                 tag="div"
                 name="email"
                 class="form__box is-relative"
+                mode="passive"
               >
                 <label
                   class="form__box__label"
@@ -71,11 +71,9 @@
                   @focus="onInputEmailFocus"
                   @blur="onInputEmailBlur"
                 >
-                <ul class="form__box__errors">
-                  <li v-for="(error, i) in errors" :key="i" class="has-text-danger">
-                    {{ error }}
-                  </li>
-                </ul>
+                <span class="form__box__errors has-text-danger">
+                  {{ errors[0] }}
+                </span>
               </ValidationProvider>
 
               <!-- Password -->
@@ -85,6 +83,7 @@
                 tag="div"
                 name="user password"
                 class="form__box is-relative"
+                mode="passive"
               >
                 <label
                   class="form__box__label"
@@ -102,11 +101,9 @@
                   @focus="onInputPassFocus"
                   @blur="onInputPassBlur"
                 >
-                <ul class="form__box__errors">
-                  <li v-for="(error, i) in errors" :key="i" class="has-text-danger">
-                    {{ error }}
-                  </li>
-                </ul>
+                <span class="form__box__errors has-text-danger">
+                  {{ errors[0] }}
+                </span>
               </ValidationProvider>
 
               <!-- reCaptcha -->
@@ -130,6 +127,7 @@
                 v-slot="{ errors }"
                 tag="div"
                 name="checkbox"
+                mode="passive"
               >
                 <input
                   type="checkbox"
@@ -143,11 +141,9 @@
                 >
                   I agree to the company terms
                 </label>
-                <ul class="form__box__errors">
-                  <li v-for="(error, i) in errors" :key="i" class="has-text-danger">
-                    {{ error }}
-                  </li>
-                </ul>
+                <div class="form__box__errors has-text-danger">
+                  {{ errors[0] }}
+                </div>
               </ValidationProvider>
 
               <div class="is-flex button__wrapper">

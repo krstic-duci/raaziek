@@ -25,6 +25,10 @@
     transition: all 0.3s ease-in-out;
     width: 100%;
     padding-left: 12px;
+    border: 1px solid transparent;
+    &:hover {
+      border: 1px solid $navy-blue;
+    }
     &.form__box__input--active {
       background-color: $white;
       border: 1px solid $navy-blue;
@@ -50,10 +54,6 @@
       border-radius: 4px;
       margin-right: 8px;
     }
-  }
-
-  &:hover + .form__box__label--checkbox:before {
-    background-color: $navy-blue;
   }
 
   &:checked + .form__box__label--checkbox:before {
