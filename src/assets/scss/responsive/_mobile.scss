@@ -17,6 +17,9 @@
     height: auto;
     position: relative;
     padding: 1rem 1.5rem;
+    & > div {
+      flex-flow: row wrap;
+    }
     a {
       max-width: 150px;
     }

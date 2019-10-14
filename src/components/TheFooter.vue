@@ -1,8 +1,8 @@
 <template>
   <footer class="has-text-centered-tablet">
-    <div class="columns is-centered">
+    <div class="columns is-centered is-flex-mobile">
 
-      <div class="column is-1-fullhd is-2-desktop is-half-mobile has-text-left is-inline-block-mobile footer__column">
+      <div class="column is-1-fullhd is-2-desktop is-half-mobile has-text-left footer__column">
         <p class="footer__column__headline">
           Company name
         </p>
@@ -21,7 +21,7 @@
           </span>
       </div>
 
-      <div class="column is-1-fullhd is-2-desktop is-half-mobile has-text-left is-inline-block-mobile footer__column">
+      <div class="column is-1-fullhd is-2-desktop is-half-mobile has-text-left footer__column">
         <p class="footer__column__headline">
           Support
         </p>
@@ -42,7 +42,7 @@
         </span>
       </div>
 
-      <div class="column is-1-fullhd is-2-desktop is-half-mobile has-text-left is-inline-block-mobile footer__column">
+      <div class="column is-1-fullhd is-2-desktop is-half-mobile has-text-left footer__column">
         <p class="footer__column__headline">
           Company
         </p>
@@ -63,7 +63,7 @@
         </span>
       </div>
 
-      <div class="column is-1-fullhd is-2-desktop is-half-mobile has-text-left is-inline-block-mobile footer__column">
+      <div class="column is-1-fullhd is-2-desktop is-half-mobile has-text-left footer__column">
         <p class="footer__column__headline">
           Social
         </p>
